@@ -14,9 +14,9 @@ void HLW8012Component::setup() {
   this->cf1_store_.pulse_counter_setup(this->cf1_pin_);
 
   // Initialize multipliers
-  this->voltage_multiplier_ = this->voltage_constant_ / 10000;
-  this->current_multiplier_ = this->current_constant_ / 100000;
-  this->power_multiplier_   = this->power_constant_   / 1000;
+  this->voltage_multiplier_ = float(this->voltage_constant_) / 10000;
+  this->current_multiplier_ = float(this->current_constant_) / 100000;
+  this->power_multiplier_   = float(this->power_constant_)   / 1000;
 }
 
 void HLW8012Component::dump_config() {
