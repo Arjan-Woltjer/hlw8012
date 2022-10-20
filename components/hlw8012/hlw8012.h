@@ -46,9 +46,9 @@ class HLW8012Component : public PollingComponent {
   uint64_t cf_total_pulses_{0};
   GPIOPin *sel_pin_;
   GPIOPin *cf_pin_;
-  pulse_counter::PulseCounterStorageBase cf_store_;
+  pulse_counter::PulseCounterStorageBase &cf_store_;
   GPIOPin *cf1_pin_;
-  pulse_counter::PulseCounterStorageBase cf1_store_;
+  pulse_counter::PulseCounterStorageBase &cf1_store_;
  
   sensor::Sensor *voltage_sensor_{nullptr};
   sensor::Sensor *current_sensor_{nullptr};
