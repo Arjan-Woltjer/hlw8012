@@ -10,9 +10,18 @@ namespace hlw8012 {
 
 enum HLW8012InitialMode { HLW8012_INITIAL_MODE_CURRENT = 0, HLW8012_INITIAL_MODE_VOLTAGE };
 
+#ifdef HAS_PCNT
+#define USE_PCNT true
+#else
+#define USE_PCNT false
+#endif
+ 
 class HLW8012Component : public PollingComponent {
  public:
-  void setup() override;
+  HLW8012Component()
+      : cf_store_(*pulse_counter::get_storage(USE_PCNT)), cf1_store_(*pulse_counter::get_storage(USE_PCNT)) {}
+
+   void setup() override;
   void dump_config() override;
   float get_setup_priority() const override;
   void update() override;
