@@ -18,10 +18,9 @@ enum HLW8012InitialMode { HLW8012_INITIAL_MODE_CURRENT = 0, HLW8012_INITIAL_MODE
  
 class HLW8012Component : public PollingComponent {
  public:
-  HLW8012Component()
-      : cf_store_(*pulse_counter::get_storage(USE_PCNT)), cf1_store_(*pulse_counter::get_storage(USE_PCNT)) {}
+  HLW8012Component(): cf_store_(*pulse_counter::get_storage(USE_PCNT)), cf1_store_(*pulse_counter::get_storage(USE_PCNT)) {}
 
-   void setup() override;
+  void setup() override;
   void dump_config() override;
   float get_setup_priority() const override;
   void update() override;
