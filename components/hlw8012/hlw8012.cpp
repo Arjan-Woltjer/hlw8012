@@ -21,18 +21,18 @@ void HLW8012Component::setup() {
 
 void HLW8012Component::dump_config() {
   ESP_LOGCONFIG(TAG, "HLW8012:");
-  LOG_PIN("  SEL Pin: ", this->sel_pin_)
-  LOG_PIN("  CF  Pin: ", this->cf_pin_)
-  LOG_PIN("  CF1 Pin: ", this->cf1_pin_)
+  LOG_PIN("  SEL Pin: ", this->sel_pin_);
+  LOG_PIN("  CF  Pin: ", this->cf_pin_);
+  LOG_PIN("  CF1 Pin: ", this->cf1_pin_);
   ESP_LOGCONFIG(TAG, "  Change measurement mode every %u", this->change_mode_every_);
   ESP_LOGCONFIG(TAG, "  Voltage constant: %u V /10000  Hz", this->voltage_constant_);
   ESP_LOGCONFIG(TAG, "  Current constant: %u mA/100000 Hz", this->current_constant_);
   ESP_LOGCONFIG(TAG, "  Power   constant: %u W /1000   Hz", this->power_constant_);
-  LOG_UPDATE_INTERVAL(this)
-  LOG_SENSOR("  ", "Voltage", this->voltage_sensor_)
-  LOG_SENSOR("  ", "Current", this->current_sensor_)
-  LOG_SENSOR("  ", "Power",   this->power_sensor_)
-  LOG_SENSOR("  ", "Energy",  this->energy_sensor_)
+  LOG_UPDATE_INTERVAL(this);
+  LOG_SENSOR("  ", "Voltage", this->voltage_sensor_);
+  LOG_SENSOR("  ", "Current", this->current_sensor_);
+  LOG_SENSOR("  ", "Power",   this->power_sensor_);
+  LOG_SENSOR("  ", "Energy",  this->energy_sensor_);
 }
 float HLW8012Component::get_setup_priority() const { return setup_priority::DATA; }
 void HLW8012Component::update() {
